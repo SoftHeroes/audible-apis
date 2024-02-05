@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open Website in Iframe</title>
+
+  <div><b>Access Token :</b> <span id="messageBox"></span></div>
+
+  <iframe
+      src="http://audible.lemonpeak.net/devices/add-device/?country=us"
+      frameborder="0"
+      width="600"
+      height="600"
+    ></iframe>
+  <script>
+
+
+    var message = document.getElementById("messageBox");
+
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(event) {
+        messageBox.innerHTML = event.data;
+        console.log(event);
+    }
+    
+  </script>
+</head>
+<body>
+  <!-- <button onclick="openWebsiteInIframe()">Open Website in Iframe</button> -->
+</body>
+</html>
